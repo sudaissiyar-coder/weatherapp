@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Live Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="weather-card">
+    <h1>
+        🌤️ SkyCast
+        <span>JS</span>
+    </h1>
+
+    <div class="search-section">
+        <div class="search-input-wrapper">
+            <input type="text" id="cityInput" class="search-input" placeholder="Enter city name, e.g., London, Tokyo, New York" autocomplete="off">
+        </div>
+        <button id="searchBtn">🔍 Search</button>
+        <button id="geoBtn" class="geo-btn">📍 My Location</button>
+    </div>
+
+    <!-- dynamic status container (loading / error) -->
+    <div id="statusArea"></div>
+
+    <!-- main weather data container -->
+    <div id="weatherDisplay" style="display: none;">
+        <div class="weather-info">
+            <div class="city-name">
+                <span id="cityName">---</span>
+                <span id="countryCode" class="country-badge"></span>
+            </div>
+            <div class="temp">
+                <span id="temperature">--</span>
+                <span class="temp-unit">°C</span>
+            </div>
+            <img id="weatherIcon" class="weather-icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather icon">
+            <div class="description" id="weatherDesc">clear sky</div>
+        </div>
+
+        <div class="details-grid">
+            <div class="detail-card">
+                <div class="detail-label">💧 Humidity</div>
+                <div class="detail-value" id="humidity">--%</div>
+            </div>
+            <div class="detail-card">
+                <div class="detail-label">🌬️ Wind</div>
+                <div class="detail-value" id="windSpeed">-- km/h</div>
+            </div>
+            <div class="detail-card">
+                <div class="detail-label">☁️ Pressure</div>
+                <div class="detail-value" id="pressure">-- hPa</div>
+            </div>
+            <div class="detail-card">
+                <div class="detail-label">👁️ Feels like</div>
+                <div class="detail-value" id="feelsLike">--°</div>
+            </div>
+        </div>
+        <div class="footnote">✨ Real-time data • OpenWeatherMap</div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
